@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBC - Dimanche pour le Bien - Être des Congolais</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <img src="logo DBC.png" alt="Logo DBC" class="logo-img">
+                <span class="party-name">DBC</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                <li><a href="structure.html" class="nav-link">Structure</a></li>
+                <li><a href="#evenements" class="nav-link">Événements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="logo DBC.png" alt="Logo DBC" class="hero-logo">
+                <h1>Bienvenue a la DBC</h1>
+                <p class="tagline">Dynamique pour le Bien - Être des Congolais</p>
+                <p class="description">
+                    La DBC est un parti politique engagé pour le développement et le bien-être de tous les congolais.
+                    Ensemble, construisons une meilleure nation.
+                </p>
+                <a href="#contact" class="btn btn-primary">Adhérer au Parti</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Structure - Redirection -->
+    <section id="structure" class="structure">
+        <div class="container">
+            <h2>Structure du Parti</h2>
+            <div style="text-align: center; padding: 50px 20px;">
+                <p style="font-size: 1.2rem; color: #555; margin-bottom: 30px;">
+                    Découvrez l'organisation complète de la DBC, les membres clés et la hiérarchie du parti.
+                </p>
+                <a href="structure.html" class="btn btn-primary"
+                    style="display: inline-block; font-size: 1.1rem; padding: 15px 40px;">
+                    <i class="fas fa-arrow-right"></i> Voir la Structure Complète
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Événements -->
+    <section id="evenements" class="evenements">
+        <div class="container">
+            <h2>Événements</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">30 Mai 2026</div>
+                    <h3>Grand Meeting National</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Kinshasa - Stade de Martyrs</p>
+                    <p>Rassemblement national pour présenter nos projets et mobiliser nos militants.</p>
+                    <button class="btn btn-secondary">En savoir plus</button>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">20 Juin 2026</div>
+                    <h3>Forum Économique</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Lubumbashi - Centre des Congrès</p>
+                    <p>Discussion sur les politiques économiques et le développement durable.</p>
+                    <button class="btn btn-secondary">En savoir plus</button>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">25 Juin 2026</div>
+                    <h3>Formation des Délégués Régionaux</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Goma - Centre de Formation</p>
+                    <p>Atelier de formation pour renforcer les capacités de nos représentants locaux.</p>
+                    <button class="btn btn-secondary">En savoir plus</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact & Adhésion -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Nous Contacter</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>Siège National : 41, Av. Oshwe, Q. Salongo, C. Kasa-vubu/Kinshasa- R.D. Congo </p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>(+243) 82 2649696, 84 2163941, 82 3654706</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>dbc202004@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4>Nous Suivre</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="adhesion-form">
+                    <h2>Adhérer a la DBC</h2>
+                    <p>Rejoignez-nous pour contribuer au bien-être des congolais</p>
+                    <form id="form-adhesion">
+                        <div class="form-group">
+                            <label for="nom">Nom Complet *</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profession">Profession</label>
+                            <input type="text" id="profession" name="profession">
+                        </div>
+                        <div class="form-group">
+                            <label for="province">Province *</label>
+                            <select id="province" name="province" required>
+                                <option value="">-- Sélectionnez une province --</option>
+                                <option value="kinshasa">Kinshasa</option>
+                                <option value="kasai">Kasai</option>
+                                <option value="kasai-central">Kasai Central</option>
+                                <option value="kasai-oriental">Kasai Oriental</option>
+                                <option value="katanga">Katanga</option>
+                                <option value="haut-katanga">Haut-Katanga</option>
+                                <option value="tanganyka">Tanganyka</option>
+                                <option value="lualaba">Lualaba</option>
+                                <option value="maniema">Maniema</option>
+                                <option value="nord-kivu">Nord-Kivu</option>
+                                <option value="sud-kivu">Sud-Kivu</option>
+                                <option value="ituri">Ituri</option>
+                                <option value="haut-uele">Haut-Uele</option>
+                                <option value="bas-uele">Bas-Uele</option>
+                                <option value="tshopo">Tshopo</option>
+                                <option value="kasai-region">Kasai Région</option>
+                                <option value="equateur">Équateur</option>
+                                <option value="nord-ubangi">Nord-Ubangi</option>
+                                <option value="sud-ubangi">Sud-Ubangi</option>
+                                <option value="tshuapa">Tshuapa</option>
+                                <option value="lomamai">Lomamai</option>
+                                <option value="kwango">Kwango</option>
+                                <option value="kwilu">Kwilu</option>
+                                <option value="maiombe">Maïombe</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message ou Commentaires</label>
+                            <textarea id="message" name="message" rows="5"></textarea>
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="conditions" name="conditions" required>
+                            <label for="conditions">Je veux adhérer au DBC et accepte les conditions d'adhésion
+                                *</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Soumettre mon Adhésion</button>
+                    </form>
+                    <div id="form-message" class="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>À Propos du DBC</h4>
+                    <p>Le DBC est un mouvement politique dédié au bien-être et au développement durable de la République
+                        Démocratique du Congo.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#structure">Structure</a></li>
+                        <li><a href="#evenements">Événements</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Informations Légales</h4>
+                    <ul>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">Conditions d'Utilisation</a></li>
+                        <li><a href="#">Mentions Légales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DBC - Dynamique pour le Bien - Être des Congolais. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

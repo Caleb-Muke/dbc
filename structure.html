@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure - DBC - Dynamique pour le Bien - Être des Congolais</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ==================== */
+        /* STYLES PAGE STRUCTURE - NOUVELLE HIÉRARCHIE */
+        /* ==================== */
+        
+        .structure-page {
+            background-color: var(--light-gray);
+            min-height: 100vh;
+            padding: 80px 20px;
+        }
+
+        .structure-page .container {
+            max-width: 1200px;
+        }
+
+        .structure-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .structure-header h1 {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .structure-header p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+        }
+
+        .structure-header .underline {
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-yellow) 50%, var(--accent-green) 100%);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* ==================== */
+        /* ORGANIGRAMME */
+        /* ==================== */
+        
+        .organigram-section {
+            margin-bottom: 80px;
+        }
+
+        .organigram-section h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .organigram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .member-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 61, 165, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .member-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 12px 40px rgba(0, 61, 165, 0.25);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .member-card:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .member-image.no-image {
+            font-size: 4rem;
+            color: var(--primary-blue);
+        }
+
+        .member-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .member-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+        }
+
+        .member-position {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .member-description {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .member-contact {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .member-contact a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .member-contact a:hover {
+            background: var(--accent-green);
+            transform: translateY(-3px);
+        }
+
+        /* ==================== */
+        /* SECTIONS D'ORGANES */
+        /* ==================== */
+
+        .organ-section {
+            margin-bottom: 70px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 61, 165, 0.1);
+            border-left: 8px solid var(--accent-yellow);
+        }
+
+        .organ-section h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .organ-section i {
+            font-size: 2rem;
+            color: var(--accent-green);
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* ==================== */
+        /* SECTION DE PRÉSENTATION */
+        /* ==================== */
+
+        .organ-intro {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .organ-intro p {
+            color: var(--medium-gray);
+            line-height: 1.8;
+        }
+
+        /* ==================== */
+        /* SECTION HIÉRARCHIE */
+        /* ==================== */
+
+        .hierarchy-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 61, 165, 0.1);
+            margin-top: 60px;
+            border-left: 8px solid var(--accent-green);
+        }
+
+        .hierarchy-section h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .hierarchy-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hierarchy-level {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .hierarchy-level h4 {
+            grid-column: 1 / -1;
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hierarchy-position {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            border: 2px solid var(--primary-blue);
+        }
+
+        .hierarchy-position strong {
+            display: block;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .hierarchy-position small {
+            color: var(--medium-gray);
+        }
+
+        /* ==================== */
+        /* STATISTIQUES */
+        /* ==================== */
+
+        .structure-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 61, 165, 0.2);
+        }
+
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .stat-box .label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==================== */
+        /* RESPONSIVE */
+        /* ==================== */
+
+        @media (max-width: 768px) {
+            .structure-page {
+                padding: 40px 20px;
+            }
+
+            .structure-header h1 {
+                font-size: 2rem;
+            }
+
+            .organigram-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .organ-section,
+            .hierarchy-section {
+                padding: 25px;
+            }
+
+            .organ-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .hierarchy-level {
+                grid-template-columns: 1fr;
+            }
+
+            .structure-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ==================== */
+        /* ANIMATIONS */
+        /* ==================== */
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .member-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .member-card:nth-child(1) { animation-delay: 0.1s; }
+        .member-card:nth-child(2) { animation-delay: 0.2s; }
+        .member-card:nth-child(3) { animation-delay: 0.3s; }
+        .member-card:nth-child(4) { animation-delay: 0.4s; }
+        .member-card:nth-child(5) { animation-delay: 0.5s; }
+        .member-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* ==================== */
+        /* STYLES MISE À JOUR - NOUVELLES HIÉRARCHIES */
+        /* ==================== */
+
+        .hierarchy-level {
+            margin-bottom: 80px;
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 61, 165, 0.08);
+            border-left: 8px solid var(--primary-blue);
+        }
+
+        .hierarchy-level h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hierarchy-level i {
+            font-size: 2.5rem;
+            color: var(--accent-yellow);
+        }
+
+        .hierarchy-level .description {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .member-image-container {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .member-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .member-image-placeholder {
+            font-size: 5rem;
+            color: var(--primary-blue);
+            opacity: 0.3;
+        }
+
+        .member-card {
+            border: 3px solid var(--primary-blue);
+        }
+
+        .member-card:hover {
+            border-color: var(--accent-green);
+        }
+
+        /* Formulaire d'ajout */
+        .add-member-section {
+            margin-top: 60px;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 61, 165, 0.08);
+            border-left: 8px solid var(--accent-green);
+        }
+
+        .add-member-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 10px rgba(0, 61, 165, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-submit {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 14px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .form-submit:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 61, 165, 0.3);
+        }
+
+        .preview-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 2px dashed var(--primary-blue);
+        }
+
+        .preview-section h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .preview-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 3px solid var(--primary-blue);
+            max-width: 200px;
+        }
+
+        .preview-image {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, var(--accent-yellow) 0%, var(--accent-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .preview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preview-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .preview-info p {
+            margin: 5px 0;
+        }
+
+        .preview-name {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .preview-position {
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hierarchy-level {
+                padding: 30px 20px;
+            }
+
+            .hierarchy-level h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">
+                <img src="logo DBC.png" alt="Logo DBC" class="logo-img">
+                <span class="party-name">DBC</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="structure.html" class="nav-link active">Structure</a></li>
+                <li><a href="index.html#evenements" class="nav-link">Événements</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Structure -->
+    <section class="structure-page">
+        <div class="container">
+            <!-- En-tête -->
+            <div class="structure-header">
+                <h1><i class="fas fa-sitemap"></i> Structure du Parti</h1>
+                <p>Découvrez l'organisation et les membres clés de la DBC</p>
+                <div class="underline"></div>
+            </div>
+
+            <!-- Statistiques -->
+            <div class="structure-stats">
+                <div class="stat-box">
+                    <div class="number">44</div>
+                    <div class="label">Membres Hiérarchiques</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">6</div>
+                    <div class="label">Niveaux d'Organisation</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">19</div>
+                    <div class="label">Secrétaires Nationaux</div>
+                </div>
+            </div>
+
+            <!-- NIVEAU 1: PRÉSIDENT -->
+            <div class="hierarchy-level">
+                <h2><i class="fas fa-crown"></i> PRÉSIDENT</h2>
+                <p class="description">Chef suprême du parti, responsable de la vision et de la stratégie globale</p>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <!-- <i class="member-image-placeholder fas fa-user-tie"></i> -->
+                            <img src="ressorces/" alt="Papy Fernand KIMUANGA" onerror="this.style.display='none'">
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">Papy Fernand KIMUANGA</div>
+                            <div class="member-position">Président</div>
+                            <div class="member-description">Leader visionnaire du parti</div>
+                            <div class="member-contact">
+                                <a href="tel:+243912345678" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:papy.kimuanga@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NIVEAU 2: SECRÉTAIRE GÉNÉRAL -->
+            <div class="hierarchy-level">
+                <h2><i class="fas fa-file-contract"></i> SECRÉTAIRE GÉNÉRAL</h2>
+                <p class="description">Responsable de l'administration et de la coordination générale du parti</p>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">MWEMPU KATALAY Freddy</div>
+                            <div class="member-position">Secrétaire Général</div>
+                            <div class="member-description">Coordinateur administratif</div>
+                            <div class="member-contact">
+                                <a href="tel:+243912345679" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:mwempu.katalay@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NIVEAU 3: SECRÉTAIRE GÉNÉRAL ADJOINT -->
+            <div class="hierarchy-level">
+                <h2><i class="fas fa-user-check"></i> SECRÉTAIRES GÉNÉRAUX ADJOINTS</h2>
+                <p class="description">Adjoints au secrétaire général, coordonnant les domaines stratégiques</p>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Sec. Gén. Adjoint</div>
+                            <div class="member-description">Chargé de la Coordination des Fédérations</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000001" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Sec. Gén. Adjoint</div>
+                            <div class="member-description">En charge Organisation, Mobilisation et Implantation</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000002" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Sec. Gén. Adjoint</div>
+                            <div class="member-description">En charge Questions Économiques et Financières</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000003" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Sec. Gén. Adjoint</div>
+                            <div class="member-description">En charge Questions Électorales, Politiques</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000004" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Sec. Gén. Adjoint</div>
+                            <div class="member-description">En charge Questions Administratives et Juridiques</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000005" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Sec. Gén. Adjoint</div>
+                            <div class="member-description">En charge Développement, Formation et École du Parti</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000006" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-user-tie"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Sec. Gén. Adjoint</div>
+                            <div class="member-description">En charge Questions Socio-culturelles, Genre et Familles</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000007" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NIVEAU 4: SECRÉTAIRES NATIONAUX -->
+            <div class="hierarchy-level">
+                <h2><i class="fas fa-briefcase"></i> SECRÉTAIRES NATIONAUX</h2>
+                <p class="description">Responsables des domaines spécifiques et secteurs stratégiques</p>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-image-container">
+                        <!-- i class="member-image-placeholder fas fa-leaf" -->
+                            <img src="ressorces/caleb muke.jpeg" alt="Caleb MUKE" onerror="this.style.display='none'">
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">Caleb MUKE</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Agriculture et Développement</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000008" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:mangalacaleb@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Administration du Territoire, Décentralisation</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000009" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Coordination Fédérations Universités</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000010" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-users"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Mobilisation</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000011" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-money-bill"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Finances et Budget</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000012" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-industry"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Économie et Commerce</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000013" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-mining"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Terres, Mines et Énergie</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000014" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-globe"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Relations Extérieures</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000015" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-handshake"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Mouvements Associatifs</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000016" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-scale-balanced"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Justice et Droits Humains</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000017" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-chalkboard-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Formation Civique et Politique</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000018" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-briefcase"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Fonction Publique et Travail</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000019" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-book"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Éducation et Formation Professionnelle</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000020" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-shield-heart"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Sécurité Sociale</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000021" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-child"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Jeunesse - Président Ligue des Jeunes</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000022" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-venus"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire Nationale</div>
+                            <div class="member-description">Organisations Féminines - Présidente Ligue Femmes</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000023" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-microphone"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Information, Communication & Porte-parole du Président</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000024" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-building"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Infrastructures</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000025" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-theater-masks"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Secrétaire National</div>
+                            <div class="member-description">Culture, Sport et Loisirs</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000026" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NIVEAU 5: INTER FÉDÉRAUX -->
+            <div class="hierarchy-level">
+                <h2><i class="fas fa-project-diagram"></i> INTER FÉDÉRAUX</h2>
+                <p class="description">Coordinateurs régionaux inter-provinciaux assurant la cohésion entre régions</p>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Président Inter Fédéral</div>
+                            <div class="member-description">Kinshasa</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000027" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Vice Président Inter Fédéral</div>
+                            <div class="member-description">Kinshasa</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000028" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Président Inter Fédéral</div>
+                            <div class="member-description">Kasai</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000029" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Vice Président Inter Fédéral</div>
+                            <div class="member-description">Kasai</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000030" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Président Inter Fédéral</div>
+                            <div class="member-description">Kasai Central</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000031" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Vice Président Inter Fédéral</div>
+                            <div class="member-description">Kasai Central</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000032" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Président Inter Fédéral</div>
+                            <div class="member-description">Nord Ubangi</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000033" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Vice Président Inter Fédéral</div>
+                            <div class="member-description">Nord Ubangi</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000034" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Président Inter Fédéral</div>
+                            <div class="member-description">Kasai Occidental</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000035" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Vice Président Inter Fédéral</div>
+                            <div class="member-description">Kasai Occidental</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000036" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Président Inter Fédéral</div>
+                            <div class="member-description">Haut Katanga</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000037" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Vice Président Inter Fédéral</div>
+                            <div class="member-description">Haut Katanga</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000038" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NIVEAU 6: FÉDÉRAUX -->
+            <div class="hierarchy-level">
+                <h2><i class="fas fa-map-pin"></i> FÉDÉRAUX PROVINCIAUX (KINSHASA)</h2>
+                <p class="description">Leaders provinciaux responsables de l'implantation du parti dans les communes</p>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-city"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Fédéral</div>
+                            <div class="member-description">Tshangu</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000039" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-city"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Fédéral</div>
+                            <div class="member-description">Mont Amba</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000040" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-city"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Fédéral</div>
+                            <div class="member-description">Lukunga</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000041" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-image-container">
+                            <i class="member-image-placeholder fas fa-city"></i>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-name">À compléter</div>
+                            <div class="member-position">Fédéral</div>
+                            <div class="member-description">Funa</div>
+                            <div class="member-contact">
+                                <a href="tel:+243900000042" title="Téléphone"><i class="fas fa-phone"></i></a>
+                                <a href="mailto:contact@dbc.org" title="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>À Propos de la DBC</h4>
+                    <p>La DBC est un mouvement politique dédié au bien-être et au développement durable de la République Démocratique du Congo.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="structure.html">Structure</a></li>
+                        <li><a href="index.html#evenements">Événements</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Informations Légales</h4>
+                    <ul>
+                        <li><a href="#">Politique de Confidentialité</a></li>
+                        <li><a href="#">Conditions d'Utilisation</a></li>
+                        <li><a href="#">Mentions Légales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DBC - Dynamique pour le Bien - Être des Congolais. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Gestion de l'ajout de membre
+        function handleAddMember(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('memberName').value;
+            const position = document.getElementById('memberPosition').value;
+            const phone = document.getElementById('memberPhone').value;
+            const email = document.getElementById('memberEmail').value;
+            const description = document.getElementById('memberDescription').value;
+            const imageInput = document.getElementById('memberImage');
+
+            // Validation
+            if (!name || !position) {
+                alert('Veuillez remplir tous les champs obligatoires (*)');
+                return;
+            }
+
+            // Gérer l'image
+            if (imageInput.files && imageInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const memberData = {
+                        name,
+                        position,
+                        phone,
+                        email,
+                        description,
+                        image: e.target.result
+                    };
+                    saveMemberToStorage(memberData);
+                    alert('✓ Membre ajouté avec succès!');
+                    document.getElementById('memberForm').reset();
+                };
+                reader.readAsDataURL(imageInput.files[0]);
+            } else {
+                const memberData = {
+                    name,
+                    position,
+                    phone,
+                    email,
+                    description,
+                    image: null
+                };
+                saveMemberToStorage(memberData);
+                alert('✓ Membre ajouté avec succès (sans image)');
+                document.getElementById('memberForm').reset();
+            }
+        }
+
+        function saveMemberToStorage(memberData) {
+            let members = JSON.parse(localStorage.getItem('dbc_members')) || [];
+            members.push(memberData);
+            localStorage.setItem('dbc_members', JSON.stringify(members));
+        }
+
+        // Aperçu en temps réel
+        document.getElementById('memberName').addEventListener('input', function() {
+            document.getElementById('previewName').textContent = this.value || 'Nom du membre';
+            if (this.value) {
+                document.getElementById('previewSection').style.display = 'block';
+            }
+        });
+
+        document.getElementById('memberPosition').addEventListener('change', function() {
+            document.getElementById('previewPosition').textContent = this.value || 'Fonction';
+        });
+
+        document.getElementById('memberImage').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const previewImage = document.getElementById('previewImage');
+                    previewImage.innerHTML = `<img src="${event.target.result}" alt="Aperçu">`;
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+    </script>
+</body>
+</html>

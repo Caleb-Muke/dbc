@@ -1,0 +1,196 @@
+{
+  "siteInfo": {
+    "name": "DBC - Dynamique pour le Bien - Être des Congolais",
+    "version": "1.0",
+    "createdDate": "2026-05-24",
+    "description": "Site web officiel du parti politique DBC",
+    "language": "fr"
+  },
+  "colors": {
+    "primary": "#003DA5",
+    "accent_yellow": "#FFD700",
+    "accent_green": "#228B22",
+    "dark_blue": "#001F5C",
+    "light_gray": "#F5F5F5",
+    "description": "Couleurs officielles du parti DBC"
+  },
+  "pages": {
+    "home": "index.html",
+    "structure": "structure.html",
+    "admin": "admin.html",
+    "documentation": "README.md"
+  },
+  "sections": {
+    "accueil": {
+      "title": "Accueil",
+      "anchor": "#accueil",
+      "description": "Page d'accueil avec présentation du parti"
+    },
+    "structure": {
+      "title": "Structure",
+      "page": "structure.html",
+      "description": "Page détaillée avec tous les membres et l'organisation du parti",
+      "items": [
+        "Direction Nationale",
+        "Assemblée Générale",
+        "Comités Régionaux",
+        "Secrétariat",
+        "Commissions Thématiques",
+        "Mouvements Jeunesse"
+      ]
+    },
+    "evenements": {
+      "title": "Événements",
+      "anchor": "#evenements",
+      "description": "Événements à venir du parti"
+    },
+    "contact": {
+      "title": "Contact & Adhésion",
+      "anchor": "#contact",
+      "description": "Formulaire d'adhésion et informations de contact"
+    }
+  },
+  "contact": {
+    "address": "Siège National DBC, Kinshasa, RDC",
+    "phone": "+243 123 456 789",
+    "email": "contact@dbc-parti.org",
+    "social_media": {
+      "facebook": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "youtube": "#"
+    }
+  },
+  "formulaire_adhesion": {
+    "fields": [
+      {
+        "name": "nom",
+        "label": "Nom Complet",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "type": "email",
+        "required": true
+      },
+      {
+        "name": "telephone",
+        "label": "Téléphone",
+        "type": "tel",
+        "required": true
+      },
+      {
+        "name": "profession",
+        "label": "Profession",
+        "type": "text",
+        "required": false
+      },
+      {
+        "name": "province",
+        "label": "Province",
+        "type": "select",
+        "required": true,
+        "options": [
+          "Kinshasa",
+          "Kasai",
+          "Kasai Central",
+          "Kasai Oriental",
+          "Katanga",
+          "Haut-Katanga",
+          "Tanganyka",
+          "Lualaba",
+          "Maniema",
+          "Nord-Kivu",
+          "Sud-Kivu",
+          "Ituri",
+          "Haut-Uele",
+          "Bas-Uele",
+          "Tshopo",
+          "Équateur",
+          "Nord-Ubangi",
+          "Sud-Ubangi",
+          "Tshuapa",
+          "Kwango",
+          "Kwilu"
+        ]
+      },
+      {
+        "name": "message",
+        "label": "Message ou Commentaires",
+        "type": "textarea",
+        "required": false
+      }
+    ]
+  },
+  "exempleAdherent": {
+    "nom": "Jean Kimoka",
+    "email": "jean.kimoka@email.com",
+    "telephone": "+243912345678",
+    "profession": "Ingénieur",
+    "province": "Kinshasa",
+    "date": "24/05/2026",
+    "timestamp": "24/05/2026 14:30:45",
+    "message": "Je suis très enthousiaste de rejoindre le DBC!"
+  },
+  "features": [
+    "Navigation responsive et fluide",
+    "Formulaire d'adhésion avec validation",
+    "Sauvegarde locale (localStorage)",
+    "Panneau d'administration pour gérer les adhésions",
+    "Export des données en CSV",
+    "Design moderne avec couleurs du parti",
+    "Optimisé pour mobile et desktop",
+    "Animations et transitions fluides",
+    "Menu hamburger pour mobile",
+    "Bouton retour vers le haut",
+    "Recherche d'adhésions",
+    "Suppression de données avec confirmation"
+  ],
+  "fichiers": {
+    "index.html": {
+      "size": "~15 KB",
+      "description": "Page HTML principale avec navigation et contenu"
+    },
+    "styles.css": {
+      "size": "~25 KB",
+      "description": "Feuille de style complète avec animations"
+    },
+    "script.js": {
+      "size": "~8 KB",
+      "description": "Logique JavaScript pour interactions et formulaire"
+    },
+    "admin.html": {
+      "size": "~12 KB",
+      "description": "Panneau d'administration pour gérer les adhésions"
+    },
+    "README.md": {
+      "description": "Documentation complète du projet"
+    },
+    "config.json": {
+      "description": "Fichier de configuration (ce fichier)"
+    }
+  },
+  "navigateurs_supportes": [
+    "Chrome/Edge (v90+)",
+    "Firefox (v88+)",
+    "Safari (v14+)",
+    "Mobile browsers"
+  ],
+  "localStorage_keys": {
+    "adherents": "Array d'objets contenant les adhésions"
+  },
+  "commandes_console": {
+    "updateStats()": "Affiche les statistiques des adhésions",
+    "exportAdherents()": "Exporte les adhésions en format CSV",
+    "localStorage.getItem('adherents')": "Récupère les données d'adhésion"
+  },
+  "notes": {
+    "1": "Les données sont sauvegardées localement dans le navigateur",
+    "2": "Pas de serveur backend requis - site statique complet",
+    "3": "Compatible avec tous les navigateurs modernes",
+    "4": "Peut être déployé sur n'importe quel serveur web",
+    "5": "Prêt pour intégration avec une API backend si nécessaire"
+  }
+}
